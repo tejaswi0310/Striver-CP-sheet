@@ -1,0 +1,120 @@
+Manna is extremely disappointed to find out that no one in his college knows his first name. 
+Even his classmates call him only by his last name. Frustrated, he decides to make his fellow
+college students know his first name by forcing them to solve this question.
+
+You are given a long string as input in each testcase, containing any ASCII character. 
+Your task is to find out the number of times SUVO and SUVOJIT appears in it.
+
+Note: This problem must be solved in C language only.
+
+Input Format
+The first line contains the number of testcases, T. Next, T lines follow each containing a long string S.
+
+Output Format
+For each long string S, display the no. of times SUVO and SUVOJIT appears in it.
+
+Constraints
+
+1 <= T <= 100
+1 <= Length of each string <= 150
+
+Sample Input
+
+3
+SUVOJITSU
+651SUVOMN
+$$$$$SUVOSUVOJIT$$$$$
+
+Sample Output
+
+SUVO = 0, SUVOJIT = 1
+SUVO = 1, SUVOJIT = 0
+SUVO = 1, SUVOJIT = 1
+
+Time Limit: 1
+Memory Limit: 256
+
+
+
+
+
+
+
+
+
+
+
+
+#include<stdio.h>
+int main()
+{
+    int t;
+    char s[160];
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%s",s);
+        int su=0,s1=0;
+        for(int i=0;s[i];i++)
+        {
+            if(s[i]=='S')
+            {
+                if(s[i+1]=='U'&& s[i+2]=='V'&&s[i+3]=='O'&&s[i+4]=='J'&&s[i+5]=='I'&&s[i+6]=='T')
+                 su++;
+                else
+                {
+                    if(s[i+1]=='U'&& s[i+2]=='V'&&s[i+3]=='O')
+                    {
+                        s1++;
+
+
+                    }
+
+                }
+            }
+        }
+    printf("SUVO = %d, SUVOJIT = %d\n",s1,su);
+    }
+    return 0;
+}
+
+
+
+// #include <bits/stdc++.h>
+
+// using namespace std;
+
+// int main()
+// {
+//     int t;
+//     cin>>t;
+//     while(t--){
+//     string s;
+//     cin>>s;
+//     int n=s.size();
+//     int c1=0,c2=0;
+//     //suvo 
+//     //suvojit
+//     //and (s[i+4]!='J' and s[i+5]=='I'
+//     if(n==4){
+//         if(s=="SUVO"){
+//             c1++;
+//         }
+//     }
+//     for(int i=0;i<n;i++){
+//         if(s[i]=='S')
+//             {
+//                 if(s[i+1]=='U'&& s[i+2]=='V'&&s[i+3]=='O'&&s[i+4]=='J'&&s[i+5]=='I'&&s[i+6]=='T')
+//                              c2++;
+//                 else
+//                 {
+//                     if(s[i+1]=='U'&& s[i+2]=='V'&&s[i+3]=='O')
+//                     {
+//                         c1++;
+//                     }
+//                 }
+//             }
+//     }
+//     cout<<c1<<c2<<endl;
+// }
+// }
